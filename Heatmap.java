@@ -8,14 +8,18 @@ public class Heatmap {
 	public Heatmap(int rows, int cols, String filename) throws IOException{
 		File file = new File(filename);
 		Scanner sc = new Scanner(file);
+		sc.nextLine();
+		int counter = 0;
+		double[][] row = new double[20][20];
 		while (sc.hasNextLine()) {
-			sc.nextLine();
-			String roww = sc.nextLine();
-			String[] rowarr = (roww.split(","));
-			for (int i = 0; i < rowarr.length; i++) {
-				double[] rowone[i] = (double)(Integer.parseInt(rowarr[i]));
+			String coll = sc.nextLine();
+			String[] columnarr = coll.split(",");
+			for (int i = 1; i < columnarr.length; i++) {
+				row[counter][i-1] = (Double.parseDouble(columnarr[i]));
 			}
+			counter++;
 		}
+		data = row;
 	}
 	
 	public void printHeatmap() {
