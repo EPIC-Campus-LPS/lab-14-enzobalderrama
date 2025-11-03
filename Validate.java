@@ -13,7 +13,7 @@ public class Validate {
 		int[][] slocations = new int[10][10];
 		int scount = 0;
 		int[][] dlocations = new int[10][10];
-		int dcount = 0;
+		int dcount = 0; 
 		for (int i = 0; i < board.length; i++) {
 			for (int j= 0; j < board[0].length; j++) {
 				if (board[i][j].equals("R")) {
